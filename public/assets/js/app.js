@@ -163,6 +163,42 @@ $('#picture-picker').on('change', (e)=> {
          }
         
  });
- 
+ /* Get designs posted ny user */
+ let poster = localStorage.getItem("username")
+ $.ajax({
+     url: "http://localhost:3000/designs?poster=" + poster,
+     type: "GET",
+     contentType: "application/json",
+     success: (result, status, xhr) => {
+         // console.log(result);
+         let output = "";
+         var div = $(".myDesigns");
+         for(i in result) {
+             output += ` <div class="col-md-4 card-press" id="` + result[i].id + `">
+             <div class="card" style="width:350px; border-radius: 20px; margin-bottom: 20px">
+             <img class="card-img-top" style="border-radius:20px 20px 0px 0px" src="` + result[i].image + `"alt="Card image">
+             <div class="card-body" style="padding-bottom: 0">
+             <div class="row">
+             <div class="col-md-8">
+             <h4>` + result[i].designName+ `</h4>
+             </div>
+             <div class="col-md-4">
+             <p class="card-text pull-right">` +result[i].model+`</p>
+             </div>
+             </div>
+             <hr style="margin: 5 0 5 0  !important ">
+             <p class="card-text">`+result[i].description+`</p>
+             <a href="#" class=" fa fa-heart-o" style="color: green"></a>
+             <p style="font-size: 12px; color: green;">Posted by `+result[i].poster+`</p>
+             </div>
+             </div>
+         </div> `;
+       
+     }
+     div.append(output);
+   
+     }
+    
+});
     
 });
