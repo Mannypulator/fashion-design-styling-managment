@@ -12,4 +12,35 @@ $(() => {
             return;
         }
     });
+            /* Query database to check existing email */
+            $.ajax({
+                url: "http://localhost:3000/users?email=" + email,
+                type: "GET",
+                contentType: "application/json",
+                success: (result, status, xhr) => {
+                    console.log(result);
+    
+                    if (result.length > 0) {
+                        $('.already-data').show();
+                    } else {
+                        $.ajax({
+                            url: "http://localhost:3000/users",
+                            data: JSON.stringify(data),
+                            type: "POST",
+                            contentType: "application/json",
+                            error: (xhr, status, error) => {
+                                alert(error)
+                            },
+                            success: (result, status, xhr) => {
+                                window.location.href = "login.html";
+    
+                            }
+    
+                        });
+                    }
+    
+                }
+    
+            });
+    
 });
