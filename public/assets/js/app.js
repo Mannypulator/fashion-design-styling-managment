@@ -42,5 +42,42 @@ $(() => {
                 }
     
             });
+
+            /* Log in check */
+            $("#log-in").on('click', (e) => {
+                e.preventDefault();
+                const email = $("#email").val();
+                const password = $("#pwd").val();
+                const data = { name: name, email: email, password: password }
+        
+                if (email.length < 1 || password.length < 1) {
+                    $('.empty-data').show();
+                    return;
+                }
+        
+                $.ajax({
+                    url: "http://localhost:3000/users?email=" + email,
+                    type: "GET",
+                    contentType: "application/json",
+                    success: (result, status, xhr) => {
+                        if (result.length > 0) {
+                            if (password == result[0].password) {
+                                window.location.href = "home.html";
+                                localStorage.setItem("username", result[0].name);
+                            } else {
+                                $('.wrong-password').show();
+        
+                            }
+                        } else {
+                            $('.not-exist').show();
+                        }
+        
+                    }
+        
+        
+        
+        
+                })
+            })
     
 });
