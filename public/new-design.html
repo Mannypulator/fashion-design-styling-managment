@@ -28,7 +28,7 @@
   </nav>
 
   <div id="mySidenav" class="sidenav" style="margin-top: 50px">
-    <a href="javascript:void(0)" class="closebtn"  onclick="closeNav()">&times;</a>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="home.html">Home</a>
     <a href="account.html">Account</a>
     <a href="my-designs.html">My Designs</a>
@@ -50,10 +50,10 @@
     <form id="new-form">
       <div class="row">
         <div class="col-md-6">
-            <div class="alert alert-danger empty-data already-data alert-dismissible fade show" style="display: none">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                Fill in the required details.
-              </div>
+          <div class="alert alert-danger empty-data already-data alert-dismissible fade show" style="display: none">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Fill in the required details.
+          </div>
           <div class="form-group">
             <label for="designName">Design Name</label>
             <input type="text" style="border-radius: 20px" class="form-control" id="designName">
@@ -67,66 +67,65 @@
             <input type="text" style="border-radius: 20px" class="form-control" id="model">
           </div>
           <div class="form-group">
-              <label for="gender">Gender</label>
-              <select class="form-control" id="gender" style="border-radius: 20px">
-                <option>Male</option>
-                <option>Female</option>
-                <option>Others</option>
-               
-              </select>
-            </div>
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" style="border-radius: 20px">
+              <option>Male</option>
+              <option>Female</option>
+              <option>Others</option>
+
+            </select>
+          </div>
         </div>
 
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="designType">Design Type</label>
-              <input type="text" style="border-radius: 20px" class="form-control" id="designType">
-            </div>
-            <div class="form-group">
-              <label for="size">Size</label>
-              <input type="text" style="border-radius: 20px" class="form-control" id="size">
-            </div>
-            <div class="form-group">
-              <label for="color">Color</label>
-              <input type="text" style="border-radius: 20px" class="form-control" id="color">
-            </div>
-            <div class="form-group">
-              <label for="email">Upload Design</label>
-
-              <input type="file" id="picture-picker" accept="image/*" value="" style="border-radius: 20px"
-                class="form-control-file border">
-            </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="designType">Design Type</label>
+            <input type="text" style="border-radius: 20px" class="form-control" id="designType">
           </div>
-
-          <div class="col-md-12">
-              <div class="form-group">
-                  <label for="description">Design Description</label>
-                  <textarea class="form-control" rows="5" id="description" style="border-radius: 20px"></textarea>
-                </div>
-            </div>
-           
+          <div class="form-group">
+            <label for="size">Size</label>
+            <input type="text" style="border-radius: 20px" class="form-control" id="size">
           </div>
-          <button type="submit" class="btn btn-primary submit-design" style="margin-bottom: 40px">Submit</button>
+          <div class="form-group">
+            <label for="color">Color</label>
+            <input type="text" style="border-radius: 20px" class="form-control" id="color">
+          </div>
+          <div class="form-group">
+            <label for="email">Upload Design</label>
+
+            <input type="file" id="picture-picker" accept="image/*" value="" style="border-radius: 20px"
+              class="form-control-file border">
+          </div>
         </div>
-     
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="description">Design Description</label>
+            <textarea class="form-control" rows="5" id="description" style="border-radius: 20px"></textarea>
+          </div>
+        </div>
+
+      </div>
+      <button type="submit" class="btn btn-primary submit-design" style="margin-bottom: 40px">Submit</button>
+  </div>
 
 
 
 
 
 
-       
-    </form>
+
+
+  </form>
   </div>
   <script src="./assets/js/jquery.min.js"></script>
   <script src="./assets/js/app.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 </body>
 
 <script>
-
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
@@ -138,7 +137,8 @@
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
     document.body.style.backgroundColor = "white";
-  }</script>
+  }
+</script>
 
 
 </html>
